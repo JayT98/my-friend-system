@@ -1,0 +1,377 @@
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+}
+
+/*  Header Style */
+.mfsHeader {
+    background-color: #ffa366;
+}
+
+.mfsHeader a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    float: left;
+    height: 60px;
+    width: 60px;
+    margin: 10px 12px;
+}
+
+.logo h1 {
+    margin: 0 20px 0 0;
+}
+
+/*  NavBar Style */
+.navBar {
+    background-color: #66e0ff;
+    color: white;
+}
+
+.navBar ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.navBar li {
+    display: inline-block;
+    padding: 28px 1px;
+    text-align: center;
+}
+
+.navBar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px 20px;
+}
+
+.navBar li a:hover{
+    color: black;
+    background-color: #00cc00;
+}
+
+.navBar .itemActive {
+    background-color: #00cc00;
+}
+
+.navBar .itemActive a{
+    background-color: #00cc00;
+    color: black;
+}
+
+.navLeft {
+    float: left;
+}
+
+.navRight {
+    float: right;
+}
+
+/*  SideBar Style */
+.pageHeader,
+.sideBar {
+    padding: 10px;
+    text-align: center;
+}
+
+.pageHeader {
+    font-size: 20px;
+}
+
+.sideBar {
+    background-color:  #ffa366;
+}
+
+.pageContent {
+    background-color: whitesmoke;
+    color:  #001a0f;
+    padding: 20px;
+}
+
+/*  footer Style */
+.mfsFooter {
+    background-color:  #66e0ff;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: right;
+    line-height: 50px;
+    padding: 0 10px;
+}
+
+.mfsFooter a{
+    color: white;
+    text-decoration: none;
+}
+
+
+/*  index.php Style */
+.noticeSuccess {
+    color: green;
+    font-size: 20px;
+    text-align: center;
+}
+.noticeError {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*  grid Style */
+@supports (display: grid) {
+    @media screen {
+        .site {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, minmax(60px, auto)) auto minmax(100vh, auto) auto;
+            grid-template-areas:
+                "mfsHeader"
+                "navBar"
+                "sideContent"
+                "pageContent"
+                "mfsFooter";
+        }
+
+        .sideContent {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "pageHeader"
+                "sideBar";
+        }
+
+        .mfsHeader{
+            grid-area: mfsHeader;
+        }
+
+        .navBar {
+            grid-area: navBar;
+        }
+
+        .sideBar {
+            grid-area: sideBar;
+        }
+
+        .sideContent {
+            grid-area: sideContent;
+        }
+
+        .pageHeader {
+            grid-area: pageHeader;
+        }
+
+        .pageContent {
+            grid-area: pageContent;
+        }
+
+        .mfsFooter {
+            grid-area: mfsFooter;
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        .site {
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: minmax(60px, auto) minmax(100vh, auto) auto;
+            grid-template-areas:
+                "mfsHeader navBar"
+                "sideContent pageContent"
+                "mfsFooter mfsFooter";
+        }
+
+        .sideContent {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 2fr;
+            grid-template-areas:
+                "pageHeader"
+                "sideBar";
+        }
+    }
+}
+
+/*  Box Style in signup.php and login.php */
+.boxSuccess {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px 5px;
+    background-color: #00cc00;
+    color: white;
+    border-radius: 20px;
+}
+
+.boxError {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px 5px;
+    background-color: #cc0000;
+    color: white;
+    border-radius: 20px;
+}
+
+/*  Form Style */
+.formElement {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "label"
+        "input";
+}
+
+.form {
+    padding: 10px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+input, select {
+    border: 1px solid black;
+    grid-area: input;
+    border-radius: 10px;
+}
+
+input,
+select::placeholder {
+    padding: 10px 10px;
+}
+
+form button {
+    margin: 30px;
+}
+
+form .clrBtn {
+    float: left;
+}
+
+form .submitBtn {
+    float: right;
+}
+
+.invalidForm {
+    font-size: 20px;
+    text-align: right;
+    color: #9c0000;
+}
+
+/*  Button Style */
+button {
+    background-color: #66e0ff;
+    border: none;
+    border-radius: 20px;
+    color: rgb(42, 49, 52);
+    cursor: pointer;
+    padding: 20px 25px;
+    text-align: center;
+    font-size: 16px;
+}
+.addFriendBtn{
+    margin: 0;
+}
+
+.unfriendBtn{
+    margin: 0;
+}
+
+.addFriendBtn:hover{
+    background-color: #00cc00;
+}
+
+.unfriendBtn:hover {
+    background-color: #ffc919;
+}
+
+/*  Table Style */
+.table {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 25px 0;
+}
+
+#addTable {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#friendTable {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tableItem {
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 10px 10px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.tableRow {
+    display: contents;
+}
+
+/*  Pagination Style */
+.pagination {
+    border: 1px solid #66e0ff;
+    border-radius: 20px;
+    color: rgb(42, 49, 52);
+    cursor: pointer;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.pagination ul {
+    list-style-type: none;
+    border-radius: 20px;
+}
+
+.pagination ul .pageItem {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    background-color: #66e0ff;
+    width: 100px;
+    border-radius: 20px; 
+    margin: 0 100px;
+}
+
+.pagination ul .pageItem .pageLink {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.pagination ul .pageItem:hover{
+    background-color: #00cc00;
+}
+
+#addFriendImg {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
